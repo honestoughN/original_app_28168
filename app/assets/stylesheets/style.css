@@ -1,0 +1,352 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ vertical-align:baseline;
+ background:transparent;
+}
+
+body {
+ /* プロジェクトによって変動 */
+ min-width: 1000px;
+ color: #000;
+ line-height: 1.6;
+ font-weight: 400;
+ font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'YuGothic', '游ゴシック', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+ width: 100%;
+ /* font-smoothing: antialiased; */
+ font-variant-numeric: tabular-nums;
+ /* safari hover対策 */
+ -webkit-font-smoothing: antialiased;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+ display:block;
+}
+
+ul, ol {
+ list-style:none;
+}
+
+blockquote, q {
+ quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content:'';
+ content:none;
+}
+
+a {
+ margin:0;
+ padding:0;
+ vertical-align:baseline;
+ text-decoration: none;
+ color: inherit;
+}
+
+/* change colours to suit your needs */
+ins {
+ background-color:#ff9;
+ color:#000;
+ text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+ background-color:#ff9;
+ color:#000;
+ font-style:italic;
+ font-weight:bold;
+}
+
+del {
+ text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+ border-bottom:1px dotted;
+ cursor:help;
+}
+
+table {
+ border-collapse:collapse;
+ border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+ display:block;
+ height:1px;
+ border:0;
+ border-top:1px solid #cccccc;
+ margin:1em 0;
+ padding:0;
+}
+
+input, select {
+ vertical-align:middle;
+}
+
+img {
+ vertical-align: bottom;
+ line-height: 1.0;
+}
+
+button {
+ line-height: 1.0;
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+ outline: none;
+ padding: 0;
+ appearance: none;
+}
+
+/* ここから下に記述していく */
+/* index.html */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0 10px;
+  /* color: #339933;
+  background-color: pink; */
+  font-weight: bold;
+}
+
+.main-logo {
+  /* background-color: aqua; */
+  height: 30px;
+  width: auto;
+  border: 1px solid black;
+}
+
+.user-menu {
+  display: flex;
+}
+
+.user-menu-list {
+  margin-right: 30px;
+  /* background-color: royalblue;
+  color: #cccccc; */
+  border: 1px solid black;
+}
+
+.header-string {
+  /* background-color: papayawhip; */
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+
+.search-box {
+  /* background-color: rgb(116, 232, 39); */
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-text {
+  /* background-color: white; */
+  border-radius: 12px 12px 12px 12px;
+  width: 30%;
+  font-size: 1.25rem;
+  color: gray;
+}
+
+.search-button {
+  /* background-color: skyblue; */
+  margin-left: 30px;
+  border-radius: 15px 15px 15px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* color: white; */
+  border: 2px solid black;
+}
+
+.main {
+  display: flex;
+}
+
+.category {
+  /* background-color: plum; */
+  width: 20%;
+  height: 600px;
+}
+
+.category-lists {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-list {
+  /* background-color: gray; */
+  width: 100%;
+  height: 70px;
+  border: 1px solid black;
+}
+
+.hearts {
+  /* background-color: peachpuff; */
+  width: 100%;
+  height: 600px;
+}
+
+.heart-list {
+  /* background-color: greenyellow; */
+  width: auto;
+  height: auto;
+  border: 1px solid black;
+  margin: 0px 10px 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 5px 20px;
+}
+
+.heart-title {
+  /* background-color: peachpuff; */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* .heart-child-category {
+  background-color: ivory;
+} */
+
+.heart-nickname {
+  /* background-color: honeydew; */
+  height: auto;
+  font-size: small;
+  /* color: gray; */
+}
+
+.footer {
+  /* background-color: saddlebrown; */
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  /* color: white; */
+}
+
+/* sign_upのページ */
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  /* background-color: greenyellow; */
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up-box {
+  height: 100%;
+  width: 65%;
+  border: 1px solid black;
+  font-size: 1.25rem;
+  padding: 5px;
+}
+
+.sign-up-box-list {
+  height: auto;
+  width: 30rem;
+  font-size: 1.25rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up-button, .return-button {
+  border: 1px solid black;
+  font-size: 2rem;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding: 5px;
+  /* background-color: skyblue; */
+  /* color: white */
+}
+
+/* .return-button {
+  background-color: gray;
+} */
+
+.confirmation {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stamp {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stamp-hear, .stamp-good {
+  border-radius: 20px;
+  /* background-color: green; */
+  border: 1px solid black;
+  padding: 5px;
+  /* color: white; */
+  font-size: 20px;
+}
+
+.comment {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-box {
+  width: 80%;
+  height: 300px;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+.comment-text {
+  border: 1px solid black;
+  height: auto;
+  width: auto;
+  margin: 5px 5px 5px 200px;
+  border-radius: 40px;
+  padding-left: 1rem;
+}
+
+.comment-text-another {
+  border: 1px solid black;
+  height: auto;
+  width: auto;
+  margin: 5px 200px 5px 5px;
+  border-radius: 40px;
+  padding-left: 1rem;
+}
+
+.comment-button {
+  border: 1px solid black;
+  /* background-color: orange; */
+  padding: 5px;
+  /* color: white; */
+  border-radius: 20px;
+  margin-top: 10px;
+  font-size: x-large;
+}
