@@ -22,7 +22,7 @@
 | user_id     | integer | null:false, foreign_key: true |
 | title       | string  | null:false                    |
 | detail      | text    | null:false                    |
-| category_id | integer | null::false                   |
+| category_id | integer | null:false                   |
 
 ### Association
 
