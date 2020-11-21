@@ -46,60 +46,29 @@
         </div>
         <div class="hearts">
           <ul>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
+            <% @hearts.each do |heart| %>
+              <a href="#">
+                <li class="heart-list">
+                  <div class="heart-list-main">
+                    <p class="heart-title"><%= heart.title %></p>
+                    <p class="heart-child-category"><%= heart.category_id %></p>
+                  </div>
+                  <p class="heart-nickname"><%= heart.user_id %></p>
+                </li>
+              </a>
+            <% end %>
+            
+            <% if @hearts.blank? %>
+              <a href="#">
+                <li class="heart-list">
+                  <div class="heart-list-main">
+                    <p class="heart-title">タイトル</p>
+                    <p class="heart-child-category">子カテゴリー</p>
+                  </div>
+                  <p class="heart-nickname">投稿者名</p>
+                </li>
+              </a>
+            <% end %>
           </ul>
         </div>
       </div>
