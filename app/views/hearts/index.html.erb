@@ -1,80 +1,72 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <header>
-      <div class="header">
-        <a href="/">
-          <div class="header-logo">
-            <p class="main-logo">Heart Share</p>
-          </div>
-        </a>
-        <div class="header-menu">
-          <ul class="user-menu">
-            <li class="user-menu-list"><a href="#">ログイン</a></li>
-            <li class="user-menu-list"><a href="#">新規登録</a></li>
-          </ul>
-        </div>
+<header>
+  <div class="header">
+    <a href="/">
+      <div class="header-logo">
+        <p class="main-logo">Heart Share</p>
       </div>
-      <div class="header-string">
-        <p>
-          自分の想っていることをアウトプットして、<br>
-          やりたいことを具体化していこう♪
-          アウトプットしている記事を参考にして、<br>
-          新しい考えも取り入れよう♪
-        </p>
-      </div>
-      <div class="search-box">
-        <input type="text" class="search-text">
-        <div class="search-button">
-          <span><a href="#">検索</a></span>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="main">
-        <div class="category">
-          <ul class="category-lists">
-            <a href="#"><li class="category-list">カテゴリー</li></a>
-            <a href="#"><li class="category-list">好きなこと</li></a>
-            <a href="#"><li class="category-list">得意なこと</li></a>
-            <a href="#"><li class="category-list">重要なこと</li></a>
-            <a href="#"><li class="category-list">その他</li></a>
-          </ul>
-        </div>
-        <div class="hearts">
-          <ul>
-            <% @hearts.each do |heart| %>
-              <a href="#">
-                <li class="heart-list">
-                  <div class="heart-list-main">
-                    <p class="heart-title"><%= heart.title %></p>
-                    <p class="heart-child-category"><%= heart.category_id %></p>
-                  </div>
-                  <p class="heart-nickname"><%= heart.user_id %></p>
-                </li>
-              </a>
-            <% end %>
-            
-            <% if @hearts.blank? %>
-              <a href="#">
-                <li class="heart-list">
-                  <div class="heart-list-main">
-                    <p class="heart-title">タイトル</p>
-                    <p class="heart-child-category">子カテゴリー</p>
-                  </div>
-                  <p class="heart-nickname">投稿者名</p>
-                </li>
-              </a>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </main>
-    <footer class="footer">
-      <p>著作権とか</p>
-    </footer>
-  </body>
-</html>
+    </a>
+    <div class="header-menu">
+      <ul class="user-menu">
+        <li class="user-menu-list"><a href="/users/sign_in">ログイン</a></li>
+        <li class="user-menu-list"><a href="/users/sign_up">新規登録</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="header-string">
+    <p>
+      自分の想っていることをアウトプットして、<br>
+      やりたいことを具体化していこう♪
+      アウトプットしている記事を参考にして、<br>
+      新しい考えも取り入れよう♪
+    </p>
+  </div>
+  <div class="search-box">
+    <input type="text" class="search-text">
+    <div class="search-button">
+      <span><a href="#">検索</a></span>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="main">
+    <div class="category">
+      <ul class="category-lists">
+        <a href="#"><li class="category-list">カテゴリー</li></a>
+        <a href="#"><li class="category-list">好きなこと</li></a>
+        <a href="#"><li class="category-list">得意なこと</li></a>
+        <a href="#"><li class="category-list">重要なこと</li></a>
+        <a href="#"><li class="category-list">その他</li></a>
+      </ul>
+    </div>
+    <div class="hearts">
+      <ul>
+        <% @hearts.each do |heart| %>
+          <a href="#">
+            <li class="heart-list">
+              <div class="heart-list-main">
+                <p class="heart-title"><%= heart.title %></p>
+                <p class="heart-child-category"><%= heart.category_id %></p>
+              </div>
+              <p class="heart-nickname"><%= heart.user_id %></p>
+            </li>
+          </a>
+        <% end %>
+
+        <% if @hearts.blank? %>
+          <a href="#">
+            <li class="heart-list">
+              <div class="heart-list-main">
+                <p class="heart-title">タイトル</p>
+                <p class="heart-child-category">子カテゴリー</p>
+              </div>
+              <p class="heart-nickname">投稿者名</p>
+            </li>
+          </a>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <p>著作権とか</p>
+</footer>
