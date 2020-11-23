@@ -1,6 +1,6 @@
 <header>
   <div class="header header-center">
-    <a href="index.html">
+    <a href="/">
       <div class="header-logo">
         <p class="main-logo">Heart Share</p>
       </div>
@@ -17,49 +17,21 @@
 </header>
 <main class="main">
   <div class="sign-up-box">
-    <div>
-      <p>Email</p>
-      <input type="text" class="sign-up-box-list" placeholder="Emailを入力してください">
-    </div>
-    <div>
-      <p>パスワード</p>
-      <input type="password" class="sign-up-box-list" placeholder="パスワードを入力してください">
-    </div>
-    <div class="button">
-      <button class="sign-up-button">ログイン</button>
-    </div>
+    <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+      <div>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "sign-up-box-list", placeholder: "Emailを入力してください" %>
+      </div>
+      <div>
+        <%= f.label :password, "パスワード" %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "sign-up-box-list", placeholder: "パスワードを入力してください" %>
+      </div>
+      <div class="button">
+        <%= f.submit "ログイン", class: "sign-up-button" %>
+      </div>
+    <% end %>
   </div>
 </main>
 <footer class="footer">
   <p>著作権とか</p>
 </footer>
-
-
-
-<div class="contents row">
-  <div class="container">
-    <h2>Log in</h2>
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.label :remember_me %><br />
-          <%= f.check_box :remember_me %>
-        </div>
-      <% end -%>
-
-      <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
-    <% end %>
-  </div>
-</div>
