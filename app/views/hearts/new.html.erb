@@ -17,25 +17,27 @@
 </header>
 <main class="main">
   <div class="sign-up-box">
-    <div>
-      <p>タイトル</p>
-      <input type="text" class="sign-up-box-list" placeholder="タイトルを入力してください">
-    </div>
-    <div>
-      <p>カテゴリー</p>
-      <input type="text" class="sign-up-box-list" placeholder="カテゴリーを選択してください">
-    </div>
-    <div>
-      <p>子カテゴリー</p>
-      <input type="text" class="sign-up-box-list" placeholder="子カテゴリーを選択してください">
-    </div>
-    <div>
-      <p>My Heart記述欄</p>
-      <input type="textarea" class="sign-up-box-list" placeholder="あなたの想いを自由に書いてください">
-    </div>
-    <div class="button">
-      <button class="sign-up-button">確認</button>
-    </div>
+    <%= form_with model: @user, local: true do |f| %>
+      <div>
+        <%= f.label "タイトル" %><br />
+        <%= f.text_field :title, class: "sign-up-box-list", placeholder: "タイトルを入力してください" %>
+      </div>
+      <div>
+        <%= f.label "カテゴリー" %><br />
+        <%= f.text_field :category, class: "sign-up-box-list", placeholder: "カテゴリーを選択してください" %>
+      </div>
+      <div>
+        <%= f.label "子カテゴリー" %><br />
+        <%= f.text_field :category, class: "sign-up-box-list", placeholder: "子カテゴリーを選択してください" %>
+      </div>
+      <div>
+        <%= f.label "My Heart記述欄" %><br />
+        <%= f.text_area :detail, class: "sign-up-box-list", placeholder: "あなたの想いを自由に書いてください" %>
+      </div>
+      <div class="button">
+        <%= f.submit "投稿する", class: "sign-up-button" %>
+      </div>
+    <% end %>
   </div>
 </main>
 <footer class="footer">
