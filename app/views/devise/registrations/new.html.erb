@@ -1,0 +1,45 @@
+<header>
+  <div class="header header-center">
+    <a href="/">
+      <div class="header-logo">
+        <p class="main-logo">Heart Share</p>
+      </div>
+    </a>
+  </div>
+  <div class="header-string">
+    <p>
+      自分の想っていることをアウトプットして、<br>
+      やりたいことを具体化していこう♪
+      アウトプットしている記事を参考にして、<br>
+      新しい考えも取り入れよう♪
+    </p>
+  </div>
+</header>
+<main class="main">
+  <div class="sign-up-box">
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <div>
+        <%= f.label :nickname, "ニックネーム" %><br />
+        <%= f.text_field :nickname, autofocus: true, class: "sign-up-box-list", placeholder: "ニックネームを入力してください" %>
+      </div>
+      <div>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, class: "sign-up-box-list", placeholder: "Emailを入力してください" %>
+      </div>
+      <div>
+        <%= f.label :password, "パスワード" %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "sign-up-box-list", placeholder: "パスワードを入力してください" %>
+      </div>
+      <div>
+        <%= f.label :password_confirmation, "パスワード（確認用）" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "sign-up-box-list", placeholder: "パスワードを入力してください" %>
+      </div>
+      <div class="button">
+        <%= f.submit "登録", class: "sign-up-button" %>
+      </div>
+    <% end %>
+  </div>
+</main>
+<footer class="footer">
+  <p>著作権とか</p>
+</footer>
