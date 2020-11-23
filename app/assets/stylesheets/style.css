@@ -365,3 +365,15 @@ button {
   float: right;
   margin-right: 10px;
 }
+
+.purchase-btn {
+  width: 120px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
