@@ -1,0 +1,45 @@
+<header>
+  <div class="header header-center">
+    <a href="/">
+      <div class="header-logo">
+        <p class="main-logo">Heart Share</p>
+      </div>
+    </a>
+  </div>
+  <div class="header-string">
+    <p>
+      自分の想っていることをアウトプットして、<br>
+      やりたいことを具体化していこう♪
+      アウトプットしている記事を参考にして、<br>
+      新しい考えも取り入れよう♪
+    </p>
+  </div>
+</header>
+<main class="main">
+  <div class="sign-up-box">
+    <%= form_with model: @heart, local: true do |f| %>
+      <div>
+        <%= f.label "タイトル" %><br />
+        <%= f.text_field :title, class: "sign-up-box-list", placeholder: "タイトルを入力してください" %>
+      </div>
+      <div>
+        <%= f.label "カテゴリー" %><br />
+        <%= f.text_field :category_id, class: "sign-up-box-list", placeholder: "カテゴリーを選択してください" %>
+      </div>
+      <div>
+        <%= f.label "子カテゴリー" %><br />
+        <%= f.text_field :category_id, class: "sign-up-box-list", placeholder: "子カテゴリーを選択してください" %>
+      </div>
+      <div>
+        <%= f.label "My Heart記述欄" %><br />
+        <%= f.text_area :detail, class: "sign-up-box-list", placeholder: "あなたの想いを自由に書いてください" %>
+      </div>
+      <div class="button">
+        <%= f.submit "投稿する", class: "sign-up-button" %>
+      </div>
+    <% end %>
+  </div>
+</main>
+<footer class="footer">
+  <p>著作権とか</p>
+</footer>

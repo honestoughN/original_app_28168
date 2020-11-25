@@ -52,7 +52,7 @@
                 <p class="heart-title"><%= heart.title %></p>
                 <p class="heart-child-category"><%= heart.category_id %></p>
               </div>
-              <p class="heart-nickname"><%= heart.user_id %></p>
+              <p class="heart-nickname"><%= heart.user.nickname %></p>
             </li>
           </a>
         <% end %>
@@ -70,6 +70,10 @@
         <% end %>
       </ul>
     </div>
+  </div>
+  <div class='purchase-btn'>
+    <a href="/hearts/new">投稿する
+    </a>
   </div>
 </main>
 <footer class="footer">
