@@ -321,6 +321,8 @@ button {
   height: 300px;
   border: 1px solid black;
   margin-top: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .comment-text {
@@ -341,14 +343,30 @@ button {
   padding-left: 1rem;
 }
 
+.comment-input {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.comment-input-box {
+  width: 80%;
+  margin-top: 5px;
+}
+
 .comment-button {
   border: 1px solid black;
   /* background-color: orange; */
   padding: 5px;
   /* color: white; */
   border-radius: 20px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   font-size: x-large;
+  margin-top: 5px;
+}
+
+#motto_button {
+  display: none;
 }
 
 .menu-button {
