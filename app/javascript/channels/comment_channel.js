@@ -10,7 +10,6 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
-    console.log(data)
     if ( data.heart.user_id == data.content.user_id ) {
       const html = `<div class="comment-text"><p>☆${ data.user_name }</p><p>${data.content.text}</p></div>`;
       const comments = document.getElementById('comments');
@@ -22,7 +21,7 @@ consumer.subscriptions.create("CommentChannel", {
       const comments = document.getElementById('comments');
       const newComment = document.getElementById('comment_text');
       comments.insertAdjacentHTML('afterbegin', html);
-      newComment.value='';
+      newComment.value='もっと聞きたい！';
     }
   }
 });

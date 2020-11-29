@@ -56,12 +56,20 @@
       <% if user_signed_in? && current_user.id == @heart.user.id %>
         <%= form_with(model: [@heart, @comment], local: true) do |f| %>
           <div><%= f.text_area :text, placeholder: "コメントする", class: "comment-input-box" %></div>
-          <div><%= f.submit "コメントする", class: "comment-button" %></div>
+          <div>
+            <%= button_tag type: :submit, class: "comment-button" do %>
+              <p>コメントする</p>
+            <% end %>
+          </div>
         <% end %>
       <% elsif user_signed_in? %>
         <%= form_with(model: [@heart, @comment], local: true) do |f| %>
           <div><%= f.text_field :text, value: "もっと聞きたい！", class: "comment-input-box", id: "motto_button"%></div>
-          <div><%= f.submit "もっと聞きたい！", class: "comment-button" %></div>
+          <div>
+            <%= button_tag type: :submit, class: "comment-button" do %>
+              <p>もっと聞きたい！</p>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
       <% unless user_signed_in? %>
