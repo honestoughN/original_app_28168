@@ -227,6 +227,11 @@ button {
   font-size: 1.5rem;
 }
 
+.good-point {
+  font-size: small;
+  font-weight: normal;
+}
+
 /* .heart-child-category {
   background-color: ivory;
 } */
