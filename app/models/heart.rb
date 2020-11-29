@@ -1,7 +1,8 @@
 class Heart < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :user
   belongs_to :category
+
+  belongs_to :user
   has_many :comments, dependent: :destroy
 
   with_options presence: true do

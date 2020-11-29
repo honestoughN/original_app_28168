@@ -1,4 +1,4 @@
-class Category < ApplicationRecord
+class Category < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '好きなこと' },
@@ -8,5 +8,5 @@ class Category < ApplicationRecord
   ]
 
   include ActiveHash::Associations
-  has_many :categories
+  has_many :hearts
 end
