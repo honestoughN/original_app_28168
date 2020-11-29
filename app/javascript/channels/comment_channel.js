@@ -10,7 +10,7 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
-    if ( data.heart.user_id == data.content.user_id ) {
+    if ( data.heart.user_id == data.content.user_id && data.content.text != blank ) {
       const html = `<div class="comment-text"><p>☆${ data.user_name }</p><p>${data.content.text}</p></div>`;
       const comments = document.getElementById('comments');
       const newComment = document.getElementById('comment_text');

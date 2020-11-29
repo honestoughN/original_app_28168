@@ -1,4 +1,6 @@
 class HeartsController < ApplicationController
+  before_action :move_to_sign_in, only: [:new]
+  before_action :set_heart, only: [:show, :edit, :update]
   def index
     @hearts = Heart.all
   end
@@ -17,17 +19,14 @@ class HeartsController < ApplicationController
   end
 
   def show
-    @heart = Heart.find(params[:id])
     @comment = Comment.new
     @comments = @heart.comments.includes(:user)
   end
 
   def edit
-    @heart = Heart.find(params[:id])
   end
 
   def update
-    @heart = Heart.find(params[:id])
     if @heart.update(heart_params)
       redirect_to root_path
     else
@@ -41,7 +40,17 @@ class HeartsController < ApplicationController
     redirect_to root_path
   end
   private
+  def move_to_sign_in
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
+  end
+
   def heart_params
     params.require(:heart).permit(:title, :detail, :category_id).merge(user_id: current_user.id)
+  end
+
+  def set_heart
+    @heart = Heart.find(params[:id])
   end
 end
