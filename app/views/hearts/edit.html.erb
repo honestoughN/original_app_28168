@@ -24,7 +24,7 @@
       </div>
       <div>
         <%= f.label "カテゴリー" %><br />
-        <%= f.text_field :category_id, class: "sign-up-box-list", placeholder: "カテゴリーを選択してください" %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"sign-up-box-list"}) %>
       </div>
       <div>
         <%= f.label "子カテゴリー" %><br />
