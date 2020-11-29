@@ -10,12 +10,14 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
-    if ( data.heart.user_id == data.content.user_id && data.content.text != blank ) {
+    const comment_form = document.getElementById("comment-input-box");
+    if ( comment_form.value == "" ) {
+    } else if ( data.heart.user_id == data.content.user_id ) {
       const html = `<div class="comment-text"><p>☆${ data.user_name }</p><p>${data.content.text}</p></div>`;
       const comments = document.getElementById('comments');
-      const newComment = document.getElementById('comment_text');
+      // const newComment = document.getElementById('comment_text');
       comments.insertAdjacentHTML('afterbegin', html);
-      newComment.value='';
+      comment_form.value='';
     } else {
       const html = `<div class="comment-text-another"><p>${ data.user_name }</p><p>もっと聞きたい！</p></div>`;
       const comments = document.getElementById('comments');
