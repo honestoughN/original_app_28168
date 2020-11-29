@@ -32,7 +32,12 @@ class HeartsController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    heart = Heart.find(params[:id])
+    heart.destroy
+    redirect_to root_path
+  end
   private
   def heart_params
     params.require(:heart).permit(:title, :detail, :category_id).merge(user_id: current_user.id)

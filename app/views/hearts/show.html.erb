@@ -44,7 +44,7 @@
     </div>
     <div class="menu-button">
       <%= link_to '編集する', edit_heart_path(@heart.id), method: :get, class: "edit-button" %>
-      <button class="destroy-button">削除する</button>
+      <%= link_to '削除する', heart_path(@heart.id), method: :delete, class: "edit-button" %>
     </div>
   </div>
 </main>
