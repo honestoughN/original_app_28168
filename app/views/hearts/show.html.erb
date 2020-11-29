@@ -35,8 +35,21 @@
     </div>
     <div class="comment">
       <div class="comment-box">
-        <div class="comment-text">投稿者</div>
-        <div class="comment-text-another">スタンプ</div>
+        <% if @comments %>
+          <% @comments.reverse_each do |comment| %>
+            <% if @heart.user_id == comment.user_id %>
+              <div class="comment-text">
+                <p>☆<%= comment.user.nickname %></p>
+                <p><%= comment.text %></p>
+              </div>
+            <% else %>
+              <div class="comment-text-another">
+                <p><%= comment.user.nickname %></p>
+                <p><%= comment.text %></p>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="comment-input">

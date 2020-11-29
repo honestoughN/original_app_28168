@@ -321,6 +321,8 @@ button {
   height: 300px;
   border: 1px solid black;
   margin-top: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .comment-text {
