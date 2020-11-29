@@ -1,0 +1,53 @@
+<header>
+  <div class="header header-center">
+    <a href="/">
+      <div class="header-logo">
+        <p class="main-logo">Heart Share</p>
+      </div>
+    </a>
+  </div>
+  <div class="header-string">
+    <p>
+      自分の想っていることをアウトプットして、<br>
+      やりたいことを具体化していこう♪
+      アウトプットしている記事を参考にして、<br>
+      新しい考えも取り入れよう♪
+    </p>
+  </div>
+</header>
+<main class="main">
+  <div class="sign-up-box">
+    <div>
+      <p><%= @heart.title %></p>
+    </div>
+    <div>
+      <p><%= @heart.category_id %></p>
+    </div>
+    <div>
+      <p>子カテゴリー</p>
+    </div>
+    <div>
+      <p><%= @heart.detail %></p>
+    </div>
+    <div class="stamp">
+      <button class="stamp-hear">もっと聞きたい！</button>
+      <button class="stamp-good">いいね！👍56</button>
+    </div>
+    <div class="comment">
+      <div class="comment-box">
+        <div class="comment-text">投稿者</div>
+        <div class="comment-text-another">スタンプ</div>
+      </div>
+    </div>
+    <div class="comment">
+      <button class="comment-button">コメントする</button>
+    </div>
+    <div class="menu-button">
+      <%= link_to '編集する', edit_heart_path(@heart.id), method: :get, class: "edit-button" %>
+      <button class="destroy-button">削除する</button>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <p>著作権とか</p>
+</footer>

@@ -46,15 +46,15 @@
     <div class="hearts">
       <ul>
         <% @hearts.each do |heart| %>
-          <a href="#">
-            <li class="heart-list">
-              <div class="heart-list-main">
-                <p class="heart-title"><%= heart.title %></p>
-                <p class="heart-child-category"><%= heart.category_id %></p>
-              </div>
-              <p class="heart-nickname"><%= heart.user.nickname %></p>
-            </li>
-          </a>
+          <%= link_to heart_path(heart.id), method: :get do %>
+          <li class="heart-list">
+            <div class="heart-list-main">
+              <p class="heart-title"><%= heart.title %></p>
+              <p class="heart-child-category"><%= heart.category_id %></p>
+            </div>
+            <p class="heart-nickname"><%= heart.user.nickname %></p>
+          </li>
+          <% end %>
         <% end %>
 
         <% if @hearts.blank? %>
