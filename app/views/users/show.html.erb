@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
     <header>
       <div class="header header-center">
-        <a href="index.html">
+        <a href="/">
           <div class="header-logo">
             <p class="main-logo">Heart Share</p>
           </div>
@@ -25,51 +18,25 @@
     <main class="main">
       <div class="sign-up-box">
         <div>
-          <p>ニックネーム</p>
-          <input type="text" class="sign-up-box-list" placeholder="ニックネームを入力してください">
+          <P>ニックネーム：<%= @nickname %></p>
         </div>
         <div>
-          <p>Email</p>
-          <input type="text" class="sign-up-box-list" placeholder="Emailを入力してください">
+          <p>Email：<%= @email %></p>
         </div>
         <div>
-          <p>パスワード</p>
-          <input type="password" class="sign-up-box-list" placeholder="パスワードを入力してください">
-        </div>
-        <div>
-          <p>パスワード(確認用)</p>
-          <input type="password" class="sign-up-box-list" placeholder="パスワードを入力してください">
-        </div>
-        <div>
-          <p>投稿した記事一覧</p>
+          <p>&lt; 投稿した記事一覧 &gt;</p>
           <ul>
-            <a href="#">
+            <% @hearts.each do |heart| %>
+              <%= link_to heart_path(heart.id), method: :get do %>
               <li class="heart-list">
                 <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
+                  <p class="heart-title"><%= heart.title %></p>
+                  <p class="heart-child-category"><%= heart.category_id %></p>
                 </div>
-                <p class="heart-nickname">投稿者名</p>
+                <p class="heart-nickname"><%= heart.user.nickname %></p>
               </li>
-            </a>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
-            <a href="#">
-              <li class="heart-list">
-                <div class="heart-list-main">
-                  <p class="heart-title">タイトル</p>
-                  <p class="heart-child-category">子カテゴリー</p>
-                </div>
-                <p class="heart-nickname">投稿者名</p>
-              </li>
-            </a>
+              <% end %>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -77,5 +44,3 @@
     <footer class="footer">
       <p>著作権とか</p>
     </footer>
-  </body>
-</html>
