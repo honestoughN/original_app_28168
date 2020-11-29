@@ -30,11 +30,11 @@
       <p><%= @heart.detail %></p>
     </div>
     <div class="stamp">
-      <button class="stamp-hear">もっと聞きたい！</button>
+      <div></div>
       <button class="stamp-good">いいね！👍56</button>
     </div>
     <div class="comment">
-      <div class="comment-box">
+      <div class="comment-box" id="comments">
         <% if @comments %>
           <% @comments.reverse_each do |comment| %>
             <% if @heart.user_id == comment.user_id %>
@@ -57,6 +57,11 @@
         <%= form_with(model: [@heart, @comment], local: true) do |f| %>
           <div><%= f.text_area :text, placeholder: "コメントする", class: "comment-input-box" %></div>
           <div><%= f.submit "コメントする", class: "comment-button" %></div>
+        <% end %>
+      <% elsif user_signed_in? %>
+        <%= form_with(model: [@heart, @comment], local: true) do |f| %>
+          <div><%= f.text_field :text, value: "もっと聞きたい！", class: "comment-input-box", id: "motto_button"%></div>
+          <div><%= f.submit "もっと聞きたい！", class: "comment-button" %></div>
         <% end %>
       <% end %>
       <% unless user_signed_in? %>
