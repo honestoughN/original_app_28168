@@ -18,6 +18,8 @@ class HeartsController < ApplicationController
 
   def show
     @heart = Heart.find(params[:id])
+    @comment = Comment.new
+    @comments = @heart.comments.includes(:user)
   end
 
   def edit

@@ -39,8 +39,16 @@
         <div class="comment-text-another">スタンプ</div>
       </div>
     </div>
-    <div class="comment">
-      <button class="comment-button">コメントする</button>
+    <div class="comment-input">
+      <% if user_signed_in? %>
+        <%= form_with(model: [@heart, @comment], local: true) do |f| %>
+          <div><%= f.text_area :text, placeholder: "コメントする", class: "comment-input-box" %></div>
+          <div><%= f.submit "コメントする", class: "comment-button" %></div>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <%# <button class="comment-button">コメントする</button> %>
+      <% end %>
     </div>
     <div class="menu-button">
       <%= link_to '編集する', edit_heart_path(@heart.id), method: :get, class: "edit-button" %>
