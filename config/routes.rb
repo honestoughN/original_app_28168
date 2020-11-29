@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :hearts do
     resources :comments, only: [:new, :create]
   end
+  resources :user, only: :show
 end
