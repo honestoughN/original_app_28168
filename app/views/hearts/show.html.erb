@@ -1,20 +1,4 @@
-<header>
-  <div class="header header-center">
-    <a href="/">
-      <div class="header-logo">
-        <p class="main-logo">Heart Share</p>
-      </div>
-    </a>
-  </div>
-  <div class="header-string">
-    <p>
-      自分の想っていることをアウトプットして、<br>
-      やりたいことを具体化していこう♪
-      アウトプットしている記事を参考にして、<br>
-      新しい考えも取り入れよう♪
-    </p>
-  </div>
-</header>
+<%= render "shared/header" %>
 <main class="main">
   <div class="sign-up-box">
     <div>
@@ -32,7 +16,9 @@
     </div>
     <div class="stamp">
       <div></div>
-      <button class="stamp-good">いいね！👍56</button>
+      <div id="likes_buttons_<%= @heart.id %>">
+        <%= render partial: 'likes/like', locals: { heart: @heart } %>
+      </div>
     </div>
     <div class="comment">
       <div class="comment-box" id="comments">
@@ -86,6 +72,4 @@
     <% end %>
   </div>
 </main>
-<footer class="footer">
-  <p>著作権とか</p>
-</footer>
+<%= render "shared/footer" %>

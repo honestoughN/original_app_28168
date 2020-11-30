@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <% if Like.exists?(user_id: current_user.id, heart_id: heart.id) %>
+    <%= link_to heart_likes_path(@heart.id), method: :delete, remote: true do %>
+      <p class="stamp-good like">いいね！⭐️<%= @heart.likes.count %></p>
+    <% end %>
+  <% else %>
+    <%= link_to heart_likes_path(@heart.id), method: :post, remote: true do %>
+      <p class="stamp-good">いいね！⭐️<%= @heart.likes.count %></p>
+    <% end %>
+  <% end %>
+<% else %>
+  <p class="stamp-good">いいね！⭐️<%= @heart.likes.count %></p>
+<% end %>

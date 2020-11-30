@@ -1,37 +1,10 @@
-<header>
-  <div class="header">
-    <a href="/">
-      <div class="header-logo">
-        <p class="main-logo">Heart Share</p>
-      </div>
-    </a>
-    <div class="header-menu">
-      <div class="user-menu">
-        <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-menu-list" %>
-          <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-menu-list" %>
-        <% else %>
-          <%= link_to "ログイン", new_user_session_path, class: "user-menu-list" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "user-menu-list" %>
-        <% end %>
-      </div>
-    </div>
+<%= render "shared/header" %>
+<div class="search-box">
+  <input type="text" class="search-text">
+  <div class="search-button">
+    <span><a href="#">検索</a></span>
   </div>
-  <div class="header-string">
-    <p>
-      自分の想っていることをアウトプットして、<br>
-      やりたいことを具体化していこう♪
-      アウトプットしている記事を参考にして、<br>
-      新しい考えも取り入れよう♪
-    </p>
-  </div>
-  <div class="search-box">
-    <input type="text" class="search-text">
-    <div class="search-button">
-      <span><a href="#">検索</a></span>
-    </div>
-  </div>
-</header>
+</div>
 <main>
   <div class="main">
     <div class="category">
@@ -49,7 +22,7 @@
           <%= link_to heart_path(heart.id), method: :get do %>
           <li class="heart-list">
             <div class="heart-list-main">
-              <p class="heart-title"><%= heart.title %>      <span class="good-point">👍56</span></p>
+              <p class="heart-title"><%= heart.title %>      <span class="good-point">⭐️<%= heart.likes.count %></span></p>
               <p class="heart-child-category"><%= heart.category.name %></p>
             </div>
             <p class="heart-nickname"><%= heart.user.nickname %></p>
@@ -76,6 +49,4 @@
     </div>
   </a>
 </main>
-<footer class="footer">
-  <p>著作権とか</p>
-</footer>
+<%= render "shared/footer" %>

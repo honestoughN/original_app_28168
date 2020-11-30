@@ -187,8 +187,9 @@ button {
 
 .category {
   /* background-color: plum; */
-  width: 20%;
+  width: 120px;
   height: 600px;
+  margin-left: 10px;
 }
 
 .category-lists {
@@ -201,6 +202,9 @@ button {
   width: 100%;
   height: 70px;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hearts {
@@ -314,6 +318,12 @@ button {
   padding: 5px;
   /* color: white; */
   font-size: 20px;
+}
+
+.like {
+  background-color: lightsalmon;
+  color: white;
+  border: 1px solid red;
 }
 
 .comment {

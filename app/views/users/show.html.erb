@@ -1,20 +1,4 @@
-<header>
-  <div class="header header-center">
-    <a href="/">
-      <div class="header-logo">
-        <p class="main-logo">Heart Share</p>
-      </div>
-    </a>
-  </div>
-  <div class="header-string">
-    <p>
-      自分の想っていることをアウトプットして、<br>
-      やりたいことを具体化していこう♪
-      アウトプットしている記事を参考にして、<br>
-      新しい考えも取り入れよう♪
-    </p>
-  </div>
-</header>
+<%= render "shared/header" %>
 <main class="main">
   <div class="sign-up-box">
     <div>
@@ -30,7 +14,7 @@
           <%= link_to heart_path(heart.id), method: :get do %>
           <li class="heart-list">
             <div class="heart-list-main">
-              <p class="heart-title"><%= heart.title %></p>
+              <p class="heart-title"><%= heart.title %>      <span class="good-point">⭐️<%= heart.likes.count %></span></p>
               <p class="heart-child-category"><%= heart.category.name %></p>
             </div>
             <p class="heart-nickname"><%= heart.user.nickname %></p>
@@ -41,6 +25,4 @@
     </div>
   </div>
 </main>
-<footer class="footer">
-  <p>著作権とか</p>
-</footer>
+<%= render "shared/footer" %>
