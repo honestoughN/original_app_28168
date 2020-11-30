@@ -16,7 +16,9 @@
     </div>
     <div class="stamp">
       <div></div>
-      <button class="stamp-good">いいね！👍56</button>
+      <div id="likes_buttons_<%= @heart.id %>">
+        <%= render partial: 'likes/like', locals: { heart: @heart } %>
+      </div>
     </div>
     <div class="comment">
       <div class="comment-box" id="comments">

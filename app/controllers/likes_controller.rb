@@ -7,7 +7,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.find_by(user_id: :current_user.id, heart_id: @heart.id)
+    @like = Like.find_by(user_id: current_user.id, heart_id: @heart.id)
     @like.destroy
   end
 
