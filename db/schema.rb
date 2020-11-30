@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_054237) do
+ActiveRecord::Schema.define(version: 2020_11_30_113029) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 2020_11_29_054237) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "heart_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["heart_id"], name: "index_likes_on_heart_id"
+    t.index ["user_id", "heart_id"], name: "index_likes_on_user_id_and_heart_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -42,4 +52,6 @@ ActiveRecord::Schema.define(version: 2020_11_29_054237) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "hearts"
+  add_foreign_key "likes", "users"
 end
