@@ -320,6 +320,12 @@ button {
   font-size: 20px;
 }
 
+.like {
+  background-color: lightsalmon;
+  color: white;
+  border: 1px solid red;
+}
+
 .comment {
   display: flex;
   justify-content: center;
