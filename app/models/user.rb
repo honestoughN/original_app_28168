@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :hearts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_hearts, through: :likes, source: :heart
 
   with_options presence: true do
     validates :nickname
