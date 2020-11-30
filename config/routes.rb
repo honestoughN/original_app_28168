@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "hearts#index"
   resources :hearts do
     resources :comments, only: [:new, :create]
+    resource :likes, only: [:create, :destroy]
   end
   resources :users, only: :show
 end
